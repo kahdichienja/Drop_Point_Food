@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:foodbyte/routes/router.dart';
+import 'package:foodbyte/screens/restaurant_details_screen.dart';
 import 'package:foodbyte/values/data.dart';
 import 'package:foodbyte/values/values.dart';
 import 'package:foodbyte/widgets/foody_bite_card.dart';
@@ -119,6 +121,18 @@ class CategoryDetailScreen extends StatelessWidget {
                   return Container(
                     margin: EdgeInsets.only(right: 4.0),
                     child: FoodyBiteCard(
+                      onTap: ()=>Get.to(
+                            RestaurantDetailsScreen(
+                              restaurantDetails: RestaurantDetails(
+                                imagePath: imagePaths[index],
+                                restaurantName: restaurantNames[index],
+                                restaurantAddress: addresses[index],
+                                rating: ratings[index],
+                                category: category[index],
+                                distance: distance[index],
+                              ),
+                            ),
+                          ),
                       imagePath: categoryDetailImagePaths[index],
                       status: status[index],
                       cardTitle: restaurantNames[index],

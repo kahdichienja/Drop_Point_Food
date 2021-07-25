@@ -7,7 +7,6 @@ import 'package:foodbyte/widgets/spaces.dart';
 import 'package:get/get.dart';
 
 class CategoriesScreen extends StatefulWidget {
-
   @override
   _CategoriesScreenState createState() => _CategoriesScreenState();
 }
@@ -54,16 +53,18 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             return SpaceH12();
           },
           itemBuilder: (context, index) {
+            
             return Container(
               child: FoodyBiteCategoryCard(
-                onTap: () => Get.to(CategoryDetailScreen(
-                  categoryName: category[index],
+                onTap: () => Get.to(
+                  CategoryDetailScreen(
+                    categoryName: category[index],
                     imagePath: categoryListImagePaths[index],
                     selectedCategory: index,
                     numberOfCategories: categoryListImagePaths.length,
                     gradient: gradients[index],
-                ))
-                ,
+                  ),
+                ),
                 width: MediaQuery.of(context).size.width,
                 imagePath: categoryListImagePaths[index],
                 gradient: gradients[index],

@@ -3,6 +3,7 @@ import 'package:foodbyte/routes/router.dart';
 import 'package:foodbyte/screens/categories_screen.dart';
 import 'package:foodbyte/screens/filter_screen.dart';
 import 'package:foodbyte/screens/find_friends_screen.dart';
+import 'package:foodbyte/screens/restaurant_details_screen.dart';
 import 'package:foodbyte/screens/search_results.dart';
 import 'package:foodbyte/screens/trending_restaurant_screen.dart';
 import 'package:foodbyte/values/data.dart';
@@ -48,9 +49,9 @@ class HomeScreen extends StatelessWidget {
                 suffixIconImagePath: ImagePath.settingsIcon,
                 borderWidth: 0.0,
                 onTapOfLeadingIcon: () =>
-                Get.to(SearchResultsScreen(SearchValue(
-                    controller.text,
-                  ))),
+                    Get.to(SearchResultsScreen(SearchValue(
+                  controller.text,
+                ))),
                 onTapOfSuffixIcon: () => Get.to(FilterScreen()),
                 borderStyle: BorderStyle.solid,
               ),
@@ -71,26 +72,25 @@ class HomeScreen extends StatelessWidget {
                       return Container(
                         margin: EdgeInsets.only(right: 4.0),
                         child: FoodyBiteCard(
-
-                          
-                        imagePath: imagePaths[index],
-                        status: status[index],
-                        cardTitle: restaurantNames[index],
-                        rating: ratings[index],
-                        category: category[index],
-                        distance: distance[index],
-                        address: addresses[index],
-                          onTap: () =>
-
-                          Get.to(RestaurantDetails(imagePath: imagePaths[index],
-                              restaurantName: restaurantNames[index],
-                              restaurantAddress: addresses[index],
-                              rating: ratings[index],
-                              category: category[index],
-                              distance: distance[index],))
-                          
-                         
-                          
+                          imagePath: imagePaths[index],
+                          status: status[index],
+                          cardTitle: restaurantNames[index],
+                          rating: ratings[index],
+                          category: category[index],
+                          distance: distance[index],
+                          address: addresses[index],
+                          onTap: () => Get.to(
+                            RestaurantDetailsScreen(
+                              restaurantDetails: RestaurantDetails(
+                                imagePath: imagePaths[index],
+                                restaurantName: restaurantNames[index],
+                                restaurantAddress: addresses[index],
+                                rating: ratings[index],
+                                category: category[index],
+                                distance: distance[index],
+                              ),
+                            ),
+                          ),
                         ),
                       );
                     }),
@@ -121,11 +121,9 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 16.0),
               HeadingRow(
-                title: StringConst.FRIENDS,
-                number: StringConst.SEE_ALL_56,
-                onTapOfNumber: () =>Get.to(FindFriendsScreen())
-                
-              ),
+                  title: StringConst.FRIENDS,
+                  number: StringConst.SEE_ALL_56,
+                  onTapOfNumber: () => Get.to(FindFriendsScreen())),
               SizedBox(height: 16.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

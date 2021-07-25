@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:foodbyte/routes/router.dart';
 import 'package:foodbyte/values/values.dart';
 import 'package:foodbyte/widgets/foody_bite_card.dart';
+import 'package:get/get.dart';
+
+import 'restaurant_details_screen.dart';
 
 class BookmarksScreen extends StatelessWidget {
   static const int TAB_NO = 1;
@@ -76,7 +80,19 @@ class BookmarksScreen extends StatelessWidget {
              distance: "12 km",
              address: "394 Broome St, New York, NY 10013, USA",
              bookmark: true,
-             onTap: () => {},
+             onTap: () => Get.to(
+                        RestaurantDetailsScreen(
+                          restaurantDetails: RestaurantDetails(
+                            imagePath: ImagePath.dinnerIsServed,
+                            restaurantName: "Dragon Heart",
+                            restaurantAddress: "417 Doom St, California, CA 90013, USA",
+                            rating: "2.3",
+                            category: StringConst.CHINESE,
+                            distance: "5 km",
+                            
+                          ),
+                        ),
+                      ),
            ),
            SizedBox(height: Sizes.WIDTH_16),
            FoodyBiteCard(
@@ -88,7 +104,19 @@ class BookmarksScreen extends StatelessWidget {
              distance: "2 km",
              address: "917 Zoom St, California, CA 20093, USA",
              bookmark: true,
-             onTap: () => {},
+             onTap: () => Get.to(
+                        RestaurantDetailsScreen(
+                          restaurantDetails: RestaurantDetails(
+                            imagePath: ImagePath.dinnerIsServed,
+                            restaurantName: "Dragon Heart",
+                            restaurantAddress: "417 Doom St, California, CA 90013, USA",
+                            rating: "2.3",
+                            category: StringConst.CHINESE,
+                            distance: "5 km",
+                            
+                          ),
+                        ),
+                      ),
            ),
            SizedBox(height: Sizes.WIDTH_16),
            FoodyBiteCard(
@@ -100,7 +128,19 @@ class BookmarksScreen extends StatelessWidget {
              distance: "4 km",
              address: "34 Devil St, New York, NY 11013, USA",
              bookmark: true,
-             onTap: () => {},
+             onTap: () => Get.to(
+                        RestaurantDetailsScreen(
+                          restaurantDetails: RestaurantDetails(
+                            imagePath: ImagePath.dinnerIsServed,
+                            restaurantName: "Dragon Heart",
+                            restaurantAddress: "417 Doom St, California, CA 90013, USA",
+                            rating: "2.3",
+                            category: StringConst.CHINESE,
+                            distance: "5 km",
+                            
+                          ),
+                        ),
+                      ),
            ),
            SizedBox(height: Sizes.WIDTH_16),
            FoodyBiteCard(
@@ -112,7 +152,19 @@ class BookmarksScreen extends StatelessWidget {
              distance: "5 km",
              address: "417 Doom St, California, CA 90013, USA",
              bookmark: true,
-             onTap: () => {},
+             onTap: () => Get.to(
+                        RestaurantDetailsScreen(
+                          restaurantDetails: RestaurantDetails(
+                            imagePath: ImagePath.dinnerIsServed,
+                            restaurantName: "Dragon Heart",
+                            restaurantAddress: "417 Doom St, California, CA 90013, USA",
+                            rating: "2.3",
+                            category: StringConst.CHINESE,
+                            distance: "5 km",
+                            
+                          ),
+                        ),
+                      ),
            ),
          ],
        ),

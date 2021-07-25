@@ -11,7 +11,7 @@ class FoodyBiteCard extends StatelessWidget {
   final String category;
   final String distance;
   final String address;
-  final GestureTapCallback? onTap;
+  final Function()? onTap;
   final bool bookmark;
   final bool isThereStatus;
   final bool isThereRatings;
